@@ -6,6 +6,7 @@ import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.os.Looper;
+import android.util.Log;
 
 import com.laifeng.sopcastsdk.camera.CameraHolder;
 import com.laifeng.sopcastsdk.camera.CameraListener;
@@ -93,15 +94,31 @@ public class MyRenderer implements GLSurfaceView.Renderer, SurfaceTexture.OnFram
             updateSurface = true;
         }
         mView.requestRender();
+
+//        Log.d("STM-TEST", "[" +
+//                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
+//                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
+//                Thread.currentThread().getStackTrace()[2].getMethodName() +
+//                "]");
     }
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+        Log.d("STM-TEST", "[" +
+                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
+                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
+                Thread.currentThread().getStackTrace()[2].getMethodName() +
+                "]");
         initSurfaceTexture();
     }
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
+        Log.d("STM-TEST", "[" +
+                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
+                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
+                Thread.currentThread().getStackTrace()[2].getMethodName() +
+                "]");
         startCameraPreview();
         if(isCameraOpen) {
             if (mRenderScreen == null) {
@@ -164,6 +181,11 @@ public class MyRenderer implements GLSurfaceView.Renderer, SurfaceTexture.OnFram
     }
 
     private void startCameraPreview() {
+        Log.d("STM-TEST", "[" +
+                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
+                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
+                Thread.currentThread().getStackTrace()[2].getMethodName() +
+                "]");
         try {
             CameraUtils.checkCameraService(mView.getContext());
         } catch (CameraDisabledException e) {
