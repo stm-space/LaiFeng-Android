@@ -3,7 +3,6 @@ package com.laifeng.sopcastsdk.ui;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -65,11 +64,6 @@ public class CameraView extends FrameLayout {
     }
 
     private void initView() {
-        Log.d("STM-TEST", "[" +
-                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
-                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
-                Thread.currentThread().getStackTrace()[2].getMethodName() +
-                "]");
         LayoutInflater mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mInflater.inflate(R.layout.layout_camera_view, this, true);
         mHandler = new WeakHandler();

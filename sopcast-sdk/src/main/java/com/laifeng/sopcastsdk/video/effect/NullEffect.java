@@ -1,7 +1,6 @@
 package com.laifeng.sopcastsdk.video.effect;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.laifeng.sopcastsdk.video.GLSLFileUtils;
 
@@ -20,11 +19,6 @@ public class NullEffect extends Effect{
 
     public NullEffect(Context context) {
         super();
-        Log.d("STM-TEST", "[" +
-                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
-                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
-                Thread.currentThread().getStackTrace()[2].getMethodName() +
-                "]");
         String vertexShader = GLSLFileUtils.getFileContextFromAssets(context, NULL_EFFECT_VERTEX);
         String fragmentShader = GLSLFileUtils.getFileContextFromAssets(context, NULL_EFFECT_FRAGMENT);
         super.setShader(vertexShader, fragmentShader);

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 
 import com.laifeng.sopcastsdk.constant.SopCastConstant;
@@ -37,11 +36,6 @@ public class RenderSurfaceView extends GLSurfaceView {
     }
 
     private void init() {
-        Log.d("STM-TEST", "[" +
-                Thread.currentThread().getStackTrace()[2].getFileName() + ", " +
-                Thread.currentThread().getStackTrace()[2].getLineNumber() + ", " +
-                Thread.currentThread().getStackTrace()[2].getMethodName() +
-                "]");
         mRenderer = new MyRenderer(this);
         setEGLContextClientVersion(2);
         setRenderer(mRenderer);
