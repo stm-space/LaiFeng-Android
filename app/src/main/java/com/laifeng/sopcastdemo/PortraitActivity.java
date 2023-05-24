@@ -142,7 +142,7 @@ public class PortraitActivity extends Activity {
         //初始化flv打包器
         FlvPacker packer = new FlvPacker();
         packer.initAudioParams(AudioConfiguration.DEFAULT_FREQUENCY, 16, false);
-        packer.initVideoParams(360, 640, 24);
+        packer.initVideoParams(720, 1280, 24);
         mLFLiveView.setPacker(packer);
         //设置发送器
         mLFLiveView.setSender(new LocalSender());
